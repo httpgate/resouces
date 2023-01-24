@@ -1,0 +1,28 @@
+# wssproxy-agent
+A local proxy agent connecting to remote websocet proxy server
+把远端的websocket加密代理服务器映射为本地的非加密普通代理服务器
+
+# 运行
+
+直接点击可执行软件，或加上可选命令行参数：
+
+./wssagent.js [wssurl] [proxy-port]
+
+wssagent-win.exe [wssurl] [proxy-port] 
+
+# 使用
+
+获得wssurl, 和"pac url"的区别是把 https 改成 wss 
+
+运行wssagent
+
+浏览器设置代理服务器为 localhost 代理端口为 wssagent 显示的端口
+
+
+# 用途
+
+很多软件不支持https加密的pac代理， 用wssagent就可以在一台电脑上把加密代理变成普通代理，整个局域网都可以按普通方式代理上网
+
+如果你海外的pacproxy服务器被封了，这有可能是IP被封了，或者域名被封了。这时你可以自己注册一个域名，在cloudflare之类的支持websocket的CDN上注册一个账户， 再在CDN上把这个域名指向你远端的pacproxy服务器，这时就又可以上网了。
+
+这时域名变成了你注册的域名，但域名后面的url还是原来的pacproxy的url, 就可以连上了。enjoy and, 法轮大法好，真善忍好。
