@@ -9,13 +9,9 @@ A local proxy agent connecting to remote websocet proxy server
 
 可下载直接点击[绿色可执行文件](https://github.com/httpgate/resouces/tree/main/wssproxy-agent)，或加上可选命令行参数。默认只本机能用代理，加-s可分享本机IP和端口给同一网段：
 
-node ./wssagent.js [wssurl] [proxy-port] [-s] [DOH-Url]
-
 ./wssagent-linux [wssurl] [proxy-port] [-s] [DOH-Url]
 
 Linux系统下的可执行文件只能在命令行下执行，除了wssurl外其它参数不是必须输入
-
-手机用户参照[Android系统wssagent说明]((\/run-in-container\/README_EN\.md))
 
 # 使用
 
