@@ -1,33 +1,37 @@
 # wssproxy-agent
-A local proxy agent connecting to remote websocket proxy server
+A local proxy agent connecting to remote websocket proxy server. Abbreviated as wssagent
 
-把远端的websocket加密代理服务器映射为本地的非加密普通代理服务器
+把远端的websocket加密代理服务器映射为本地的非加密普通代理服务器，简称为wssagent
 
 采用DOH(DNS over https)保护用户隐私
 
 
 # 使用
 
-需要先运行[pacproxy服务](https://github.com/httpgate/pacproxy.js) ， 运行后屏幕会显示 wssurl
+需要先运行[pacproxy服务](https://github.com/httpgate/pacproxy.js) ， 运行后屏幕会显示 WSSURL
 
-运行wssagent, 输入wssurl
+运行wssagent, 输入WSSURL
 
 浏览器或者wifi设置代理服务器为 localhost , 代理端口为wssagent显示的端口, 就可以加密翻墙
 
-也可以使用local pac url来限制只一个浏览器翻墙，如只firefox翻墙可设置pac url: http://localhost:[proxyport]/pac/firefox
+也可以使用local pacurl来限制只一个浏览器翻墙，如只firefox翻墙可设置pacurl: http://localhost:[PROXY_PORT]/pac/firefox
 
 
 # 运行
 
 可下载直接点击[绿色可执行文件](https://github.com/httpgate/resouces/tree/main/wssproxy-agent)，或在命令行执行，加上可选参数:
 
-./wssagent-linux [wssurl] [proxy-port] [-s] [wssip]
+./wssagent-linux [WSSURL] [PROXY_PORT] [-s] [WSSIP or DOH_SERVER] [CONNECT_DOMAIN]
 
-* Linux系统下的可执行文件只能在命令行下执行，除了wssurl外其它参数不是必须输入
+或编辑wssagent同一目录下的 [.env文件](\.env)，设置运行参数
 
-* 默认只本机能用代理，加 -s 可分享本机IP和端口给同一网段：
+* Linux系统下的可执行文件只能在命令行下执行，除了WSSURL外其它参数不是必须输入
 
-* 如指定wssip，则wssurl里的域名可以为任意域名以避开域名审查，并隐藏真实域名
+* 默认只本机能用代理，加 -s 可分享本机IP和端口给同一网段，其他参数说明见 [.env文件](\.env)
+
+* WSSIP是代理服务器的IP, 指定WSSIP将绕开DNS解析，避免域名劫持或DNS封锁
+
+* 如WSSIP是直连IP，可设置一个编造的域名[CONNECT_DOMAIN]，连接代理服务器时会自动替换WSSURL里的域名，以避开域名审查，隐藏真实域名。如果是CDN中转IP则不能用[CONNECT_DOMAIN]。编造域名需避开常见已知域名，尤其是已经被封锁的域名
 
 
 # 用途
@@ -39,6 +43,8 @@ A local proxy agent connecting to remote websocket proxy server
 
 # 安全
 
-* 如果不信任中转流量的CDN, 则可以在CDN的wss url后面加/tls , 此时穿越CDN的流量会加密，CDN不能探测你所访问的网站和内容，即使访问不加密的http网站对CDN也是不可知的。直连pacproxy服务器时不需要加/tls参数。
+* 如果不信任中转流量的CDN, 则可以在CDN的[WSSURL]后面加 /tls , 此时穿越CDN的流量会加密，CDN不能探测你所访问的网站和内容，即使访问不加密的http网站对CDN也是不可知的。直连pacproxy服务器时一般不需要加/tls参数。
+
+* 如果直连pacproxy时指定了[WSSIP]和[CONNECT_DOMAIN], 会略过服务器数字证书验证。为避免IP劫持（虽然比较少见）, 可在直连的[WSSURL]后面加 /tls , 会在tls加密连接时验证服务器的数字证书，确保连接到了真的pacproxy服务器。
 
 * 如果不信任pacproxy所运行的服务器， 则可以和无界，自由门混合使用。将无界，自由门的代理端口设置为wssagent的端口，浏览器则设置为无界/自由门的端口。这样pacproxy并不知道你具体访问了哪些网站，如原来连不上无界，自由门此时也可以连上。
