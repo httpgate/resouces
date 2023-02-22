@@ -3,14 +3,14 @@ A local proxy agent connecting to remote websocket proxy server. Abbreviated as 
 
 把远端的websocket加密代理服务器映射为本地的非加密普通代理服务器，简称为wssagent
 
-采用DOH(DNS over https)保护用户隐私
+支持DOH(DNS over https)，保护用户隐私
 
 
 # 使用
 
-需要先运行[pacproxy服务](https://github.com/httpgate/pacproxy.js) ， 运行后屏幕会显示 WSSURL
+需要先运行[pacproxy服务](https://github.com/httpgate/pacproxy.js) ， 运行后屏幕会显示 [WSSURL]
 
-运行wssagent, 输入WSSURL
+运行wssagent, 输入[WSSURL]
 
 浏览器或者wifi设置代理服务器为 localhost , 代理端口为wssagent显示的端口, 就可以加密翻墙
 
@@ -19,19 +19,19 @@ A local proxy agent connecting to remote websocket proxy server. Abbreviated as 
 
 # 运行
 
-可下载直接点击[绿色可执行文件](https://github.com/httpgate/resouces/tree/main/wssproxy-agent)，或在命令行执行，加上可选参数:
+可下载直接点击[绿色可执行文件](https://github.com/httpgate/resouces/tree/main/wssproxy-agent)，或在命令行执行，按以下顺序加上可选参数:
 
-./wssagent-linux [WSSURL] [PROXY_PORT] [-s] [WSSIP or DOH_SERVER] [CONNECT_DOMAIN]
+./wssagent-linux  [WSSURL]  [PROXY_PORT]  [-s]  [DOH_SERVER]  [WSSIP]  [CONNECT_DOMAIN]
 
-或编辑wssagent同一目录下的 [.env文件](\.env)，设置运行参数
+或编辑wssagent同一目录下的 [wss.env文件](\wss.env)，设置运行参数
 
-* Linux系统下的可执行文件只能在命令行下执行，除了WSSURL外其它参数不是必须输入
+* Linux系统下的可执行文件只能在命令行下执行，除了[WSSURL]外其它参数不是必须输入
 
-* 默认只本机能用代理，加 -s 可分享本机IP和端口给同一网段，其他参数说明见 [.env文件](\.env)
+* 默认只本机能用代理，加 -s 可分享本机IP和端口给同一网段，其他参数说明见 [wss.env文件](\wss.env)
 
-* WSSIP是代理服务器的IP, 指定WSSIP将绕开DNS解析，避免域名劫持或DNS封锁
+* [WSSIP]是代理服务器的IP, 指定[WSSIP]将绕开DNS解析，避免域名劫持或DNS封锁
 
-* 如WSSIP是直连IP，可设置一个编造的域名[CONNECT_DOMAIN]，连接代理服务器时会自动替换WSSURL里的域名，以避开域名审查，隐藏真实域名。如果是CDN中转IP则不能用[CONNECT_DOMAIN]。编造域名需避开常见已知域名，尤其是已经被封锁的域名
+* 如[WSSIP]是直连IP，可设置一个编造的域名[CONNECT_DOMAIN]，连接代理服务器时会自动替换[WSSURL]里的域名，以避开域名审查，隐藏真实域名。如果是CDN中转IP则不能用[CONNECT_DOMAIN]。编造域名需避开常见已知域名，尤其是已经被封锁的域名
 
 
 # 用途
