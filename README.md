@@ -39,6 +39,7 @@ pacurl2 (浏览器会提示输入用户密码）： https://your.proxy.com/pacur
 pacurl翻墙说明详见： https://github.com/httpgate/pacproxy.js/blob/main/documents/DeviceSetting_ZH.md
 
 Firefox设置：
+![Firefox设置图](Firefox.JPG)
 
 
 ## 用websocket url (简称wssurl)翻墙：
