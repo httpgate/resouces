@@ -87,6 +87,6 @@ wssurl + /pac翻墙说明详见：https://github.com/httpgate/wssproxy-agent
 
 简单验证：https://whatismyipaddress.com/   检查是否是自己的公网IP
 
-性能测试：干净世界等视频网站
+性能测试：干净世界 https://www.ganjing.com/ 等视频网站
 
 注意：刚访问一个新网站时会慢一会，打开后就就很快了，https握手时慢
