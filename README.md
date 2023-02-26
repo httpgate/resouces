@@ -9,6 +9,15 @@ pac加密代理服务器，编译好的绿色可执行程序和说明文档
 客户端软件wssagent在[wssproxy-agent文件夹](wssproxy-agent)
 
 
+## 推荐
+
+推荐用prcproxy安全的访问以下网站：
+* 明慧网：https://www.minghui.org
+* 干净世界：https://www.ganjing.com
+* 神韵作品: https://shenyunzuopin.com
+* 大法经书: https://www.falundafa.org
+
+
 ## pacproxy 服务器设置（参数示例）：
 
 ```
