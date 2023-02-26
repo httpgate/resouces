@@ -39,7 +39,7 @@ pacurl翻墙说明详见： https://github.com/httpgate/pacproxy.js/blob/main/do
 Firefox设置：
 
 
-## 用wssurl翻墙：
+## 用websocket url (简称wssurl)翻墙：
 
 运行服务器后，服务器还会显示以下wssurl:
 
@@ -69,11 +69,13 @@ CDN中转 websocke url2:   wss://cdn.proxy.com/pacurl_direct/tls   (传输内容
 CDN中转翻墙说明详见：https://github.com/httpgate/wssproxy-agent
 
 
-## 如果pacurl被封锁，可以用wssurl + /pac, 运行wssagent软件在国内建立镜像服务器
+## 建立镜像服务器
 
-直连websocke url: wss://your.proxy.com/pacurl_direct/pac
+如果pacurl被封锁，而wssurl可连通，可以用wssurl + /pac, 运行wssagent软件在国内建立镜像服务
 
-CDN中转websocke url: wss://cdn.proxy.com/pacurl_direct/pac
+用直连wssurl: wss://your.proxy.com/pacurl_direct/pac
+
+用CDN中转wssurl: wss://cdn.proxy.com/pacurl_direct/pac
 
 
 需要在命令行运行wssagent软件，示例： ./wssagent-linux  wss://cdn.proxy.com/pacurl_direct/pac  443  -s
