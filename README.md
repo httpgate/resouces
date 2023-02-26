@@ -34,7 +34,7 @@ pacurl2 (浏览器会提示输入用户密码）： https://your.proxy.com/pacur
    用户/密码：proxy_user / proxy_pass
 
 
-可以直接将pacurl设置在Firefox浏览器内，或wifi网络设置上
+可以直接将pacurl设置在Firefox浏览器内，或wifi网络设置上，无需安装翻墙软件即可翻墙
 
 pacurl翻墙说明详见： https://github.com/httpgate/pacproxy.js/blob/main/documents/DeviceSetting_ZH.md
 
