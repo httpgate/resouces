@@ -72,6 +72,8 @@ CDN中转 websocke url2:   wss://cdn.proxy.com/pacurl_direct/tls   (传输内容
 
 CDN中转翻墙说明详见：https://github.com/httpgate/wssproxy-agent
 
+Firefox设置见上图，选中Manual proxy configuration
+
 
 ## 建立镜像服务器
 
@@ -85,6 +87,8 @@ CDN中转翻墙说明详见：https://github.com/httpgate/wssproxy-agent
 需要在命令行运行wssagent软件，示例： ./wssagent-linux  wss://cdn.proxy.com/pacurl_direct/pac  443  -s
 
 wssurl + /pac翻墙说明详见：https://github.com/httpgate/wssproxy-agent
+
+Firefox设置同2 用pacurl翻墙，但只能用带用户名密码的pacurl
 
 
 ## 测试
