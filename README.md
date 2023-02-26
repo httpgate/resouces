@@ -29,7 +29,9 @@ pac加密代理服务器，编译好的绿色可执行程序和说明文档
 
 pacurl1 :  https://your.proxy.com/pacurl_direct
 
-pacurl2 (浏览器会提示输入用户密码）： https://your.proxy.com/pacurl_need_password   用户/密码：proxy_user / proxy_pass
+pacurl2 (浏览器会提示输入用户密码）： https://your.proxy.com/pacurl_need_password
+
+   用户/密码：proxy_user / proxy_pass
 
 
 可以直接将pacurl设置在Firefox浏览器内，或wifi网络设置上
