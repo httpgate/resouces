@@ -6,7 +6,7 @@ pac加密代理服务器，编译好的绿色可执行程序和说明文档
 
 服务器软件在[pacproxy-server文件夹](pacproxy-server)
 
-客户端软件在[wssproxy-agent文件夹](wssproxy-agent)
+客户端软件wssagent在[wssproxy-agent文件夹](wssproxy-agent)
 
 
 ## pacproxy 服务器设置（参数示例）：
