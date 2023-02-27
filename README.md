@@ -99,7 +99,7 @@ wssurl + /pac翻墙说明详见：https://github.com/httpgate/wssproxy-agent
 
 Firefox设置同2 用pacurl翻墙，但只能用带用户名密码的pacurl
 
-可能需要Private DNS加密DNS服务，可参考[CDN中转DOH服务]https://github.com/httpgate/wssproxy-agent/blob/main/CDN_PROXY_DOH.md
+可能需要用类似nextdns.io这样的Private DNS加密DNS服务，可参考[CDN中转DOH服务]https://github.com/httpgate/wssproxy-agent/blob/main/CDN_PROXY_DOH.md
 
 
 ## 测试
