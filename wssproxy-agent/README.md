@@ -26,7 +26,6 @@ A local proxy agent connecting to remote websocket proxy server. Abbreviated as 
 或编辑wssagent同一目录下的 [wss.env文件](wss.env)，设置运行参数
 
 * Linux系统下的可执行文件只能在命令行下执行，除了[WSSURL]外其它参数不是必须输入
-
 * 默认只本机能用代理，加 -s 可分享本机IP和端口给同一网段，其他参数说明见 [wss.env文件](wss.env)
 
 * [WSSIP]是代理服务器的IP, 指定[WSSIP]将绕开DNS解析，避免域名劫持或DNS封锁
@@ -35,6 +34,10 @@ A local proxy agent connecting to remote websocket proxy server. Abbreviated as 
 
 * [CONNECT_DOMAIN]仅在指定[WSSIP]时生效，[WSSIP]并不需要绑定域名记录。很多VPS可以动态增加IP地址，新加的IP地址重启pacproxy服务后就可以用作[WSSIP]
 
+* 如果同时指定了[WSSIP] 和 [DOH_SERVER]，连接时会用[WSSIP]连接服务器，但屏幕会显示[DOH_SERVER]解析域名的结果用于核对IP地址和DOH服务
+
+手机用户参照[Android系统wssagent说明](\/run-in-container\/README\.md)
+
 
 # 用途
 
@@ -42,13 +45,26 @@ A local proxy agent connecting to remote websocket proxy server. Abbreviated as 
 
 * 如果海外的pacproxy服务器被封了，这有可能是IP被封了，或者域名被封了。这时你可以自己在cloudflare之类的支持websocket的CDN上注册一个账户, 再[注册一个域名](https://github.com/httpgate/pacproxy.js/blob/main/documents/About_Domain_ZH.md)， 再在CDN上把这个域名指向你远端的pacproxy服务器，SSL/TLS mode设置为FULL, 然后把[WSSURL]中的域名改成你注册的域名, 就又可以连上了。enjoy and, 法轮大法好，真善忍好。
 
-* 如果pacurl直连被封锁，但[WSSURL]方式能连通，可以找一台墙内有公网IP的服务器运行wssagent，在[WSSURL]后加 /pac, [PROXY_PORT]设置为443，[SHARE_PROXY]设置为true, 运行后就相当于把海外的pacproxy搬到了墙内服务器上，只是域名DNS还是指向海外服务器。需要pacurl直连翻墙的电脑，可以把在本机的hosts文件加一条记录，把服务器域名指向墙内服务器IP，就可以像以前一样直接用pacurl翻墙了, 但只支持需输入用户密码的pacurl。 Android不能设置hosts, 则可以找一个可以自定义DNS记录的私有DNS服务网站，创建一个账号，把这条DNS记录加好后，Android系统设置private DNS为你的DNS账号地址，或者firefox设置DOH为你DNS账号的DOH地址。不建议修改公共的DNS记录指向墙内服务器IP, 有数字证书被盗用的风险。
+* 如果pacurl直连被封锁，但[WSSURL]方式能连通，可以找一台墙内有公网IP的服务器运行wssagent，在[WSSURL]后加 /pac, [PROXY_PORT]设置为443，[SHARE_PROXY]设置为true, 海外的pacproxy的功能就转移到这个IP上, 但只支持需输入用户密码的pacurl。目前域名DNS还是指向海外服务器IP。需要设置本机的hosts记录， 或使用类似NextDNS.io这样的私有加密DNS服务，创建账号和私有DNS记录, 最好[用CDN中转DOH服务](CDN_PROXY_DOH.md)。不建议修改公共的DNS记录指向墙内服务器IP, 有数字证书被盗用的风险。
 
 
 # 安全
 
 * 如果不信任中转流量的CDN, 则可以在CDN的[WSSURL]后面加 /tls , 此时穿越CDN的流量会加密，CDN不能探测你所访问的网站和内容，即使访问不加密的http网站对CDN也是不可知的。直连pacproxy服务器时一般不需要加/tls参数。
 
-* 如果直连pacproxy时指定了[WSSIP]和[CONNECT_DOMAIN], 会略过服务器数字证书验证。为避免IP劫持（虽然比较少见）, 可在直连的[WSSURL]后面加 /tls , 会在tls加密连接时验证服务器的数字证书，确保连接到了真的pacproxy服务器。
+* 如果直连pacproxy时指定了[WSSIP]和[CONNECT_DOMAIN], 会略过服务器数字证书验证。为避免IP劫持, 可在直连的[WSSURL]后面加 /tls , 会在tls加密连接时验证服务器的数字证书，确保连接到了真的pacproxy服务器。
+
+* [WSSURL]后面加/pac 和 加/tls 一样， 通过CDN中转时传输内容对CDN是加密的。直连时也一样会验证数字证书避免IP劫持。
+
+* 由于常见的DOH服务经常会被封锁，所以能用[WSSIP]和本机hosts记录就尽量不用DOH, 需要用DOH或私有DNS服务时，可以[用CDN中转DOH服务](CDN_PROXY_DOH.md)，避免DOH服务封锁。
 
 * 如果不信任pacproxy所运行的服务器， 则可以和无界，自由门混合使用。将无界，自由门的代理端口设置为wssagent的端口，浏览器则设置为无界/自由门的端口。这样pacproxy并不知道你具体访问了哪些网站，如原来连不上无界，自由门此时也可以连上。
+
+
+## 推荐
+
+推荐用prcproxy安全的访问以下网站：
+* 明慧网：https://www.minghui.org
+* 干净世界：https://www.ganjing.com
+* 神韵作品: https://shenyunzuopin.com
+* 大法经书: https://www.falundafa.org
