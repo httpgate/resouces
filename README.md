@@ -36,11 +36,11 @@ pac加密代理服务器，编译好的绿色可执行程序和说明文档
 
 运行服务器后，服务器会显示以下pacurl:
 
-pacurl1 :  https://your.proxy.com/pacurl_direct
+pacurl1 :  https://your.proxy.com/pacurl_direct         (超过两个小时不上网需要关闭和重新打开浏览器)
 
-pacurl2 (浏览器会提示输入用户密码）： https://your.proxy.com/pacurl_need_password
+pacurl2 ： https://your.proxy.com/pacurl_need_password  (浏览器会提示输入用户密码）
 
-   用户/密码：proxy_user / proxy_pass
+   用户/密码：proxy_user / proxy_pass  （需要在2分钟内输入正确用户密码，否则需要关闭重新打开浏览器）
 
 
 可以直接将pacurl设置在Firefox浏览器内，或wifi网络设置上，无需安装翻墙软件即可翻墙
@@ -98,6 +98,8 @@ Firefox设置见上图，选中Manual proxy configuration
 wssurl + /pac翻墙说明详见：https://github.com/httpgate/wssproxy-agent
 
 Firefox设置同2 用pacurl翻墙，但只能用带用户名密码的pacurl
+
+可能需要Private DNS加密DNS服务，可参考[CDN中转DOH服务]https://github.com/httpgate/wssproxy-agent/blob/main/CDN_PROXY_DOH.md
 
 
 ## 测试
