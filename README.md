@@ -88,7 +88,7 @@ Firefox设置见上图，选中Manual proxy configuration
 
 如果pacurl被封锁，而wssurl可连通，可以用wssurl + /pac, 运行wssagent软件在国内建立镜像服务
 
-用直连wssurl: wss://your.proxy.com/pacurl_direct/pac
+用直连wssurl:    wss://your.proxy.com/pacurl_direct/pac
 
 用CDN中转wssurl: wss://cdn.proxy.com/pacurl_direct/pac
 
@@ -99,7 +99,7 @@ wssurl + /pac翻墙说明详见：https://github.com/httpgate/wssproxy-agent
 
 Firefox设置同2 用pacurl翻墙，但只能用带用户名密码的pacurl
 
-可能需要用类似nextdns.io这样的Private DNS加密DNS服务，可参考[CDN中转DOH服务]https://github.com/httpgate/wssproxy-agent/blob/main/CDN_PROXY_DOH.md
+可能需要用类似nextdns.io这样的Private DNS加密DNS服务，可参考[CDN中转DOH服务](https://github.com/httpgate/wssproxy-agent/blob/main/CDN_PROXY_DOH.md)
 
 
 ## 测试
