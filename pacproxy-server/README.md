@@ -18,6 +18,18 @@ pacproxy runs in a web server 在vps服务器上运行的pacproxy
 需要ssh到服务器的命令行，新手推荐用Bitvise SSH Client
 
 
+## 运行(以Windows为例)
+
+用文本编辑器修改 current.site.cfg 后， 双击server-win.exe运行
+
+家庭路由器需要设置端口映射，把外网80, 443端口映射到服务器的8080，8443或自己设定的端口
+
+核对参数正确后，在浏览器访问申请的域名，第一次访问会自动获取数字证书
+
+关闭软件再重新运行，如果运行正常会显示 pacurl, 在浏览器访问 pacurl ， 如正常访问则可以使用
+
+
+
 ## 运行(以linux为例)
 
 ### 修改网站参数设置current.site.cfg：
@@ -53,11 +65,3 @@ tail -f nohup.out
 ps -ef | grep node
 kill -9 找到的pid
 ```
-
-## 运行(以Windows为例)
-
-用文本编辑器修改 current.site.cfg 后， 双击server-win.exe运行
-
-核对参数正确后，在浏览器访问申请的域名，第一次访问会自动获取数字证书
-
-关闭软件再重新运行，如果运行正常会显示 pacurl, 在浏览器访问 pacurl ， 如正常访问则可以使用
