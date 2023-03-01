@@ -53,3 +53,11 @@ tail -f nohup.out
 ps -ef | grep node
 kill -9 找到的pid
 ```
+
+## 运行(以Windows为例)
+
+用文本编辑器修改 current.site.cfg 后， 双击server-win.exe运行
+
+核对参数正确后，在浏览器访问申请的域名，第一次访问会自动获取数字证书
+
+关闭软件再重新运行，如果运行正常会显示 pacurl, 在浏览器访问 pacurl ， 如正常访问则可以使用
