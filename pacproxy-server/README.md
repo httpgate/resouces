@@ -29,7 +29,6 @@ pacproxy runs in a web server 在vps服务器上运行的pacproxy
 关闭软件再重新运行，如果运行正常会显示 pacurl, 在浏览器访问 pacurl ， 如正常访问则可以使用
 
 
-
 ## 运行(以linux为例)
 
 ### 修改网站参数设置current.site.cfg：
