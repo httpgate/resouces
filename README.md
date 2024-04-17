@@ -56,6 +56,8 @@ Firefox设置：
 Stunnel的参考设置为：
 
 ```
+foreground - yes
+
 [example-proxy]
 client = yes
 accept = 127.0.0.1:8080
