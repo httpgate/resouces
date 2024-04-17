@@ -51,6 +51,18 @@ Firefox设置：
 
 ![Firefox设置图](Firefox.JPG)
 
+主流浏览器都支持pacproxy, 其他软件很多只支持普通proxy, 可以用[Stunnel](https://www.stunnel.org/)或类似软件将pacproxy转为普通的内网proxy。
+
+Stunnel的参考设置为：
+
+```
+[example-proxy]
+client = yes
+accept = 127.0.0.1:8080
+connect = your.proxy.com:443
+```
+pacurl1 需要改为：http://127.0.0.1:8080/pacurl_direct
+pacurl2 需要改为：http://127.0.0.1:8080/pacurl_need_password
 
 ## 用websocket url (简称wssurl)翻墙：
 
