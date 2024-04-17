@@ -61,8 +61,8 @@ client = yes
 accept = 127.0.0.1:8080
 connect = your.proxy.com:443
 ```
-pacurl1 需要改为：http://127.0.0.1:8080/pacurl_direct
-pacurl2 需要改为：http://127.0.0.1:8080/pacurl_need_password
+此时 pacurl1 需要改为：http://127.0.0.1:8080/pacurl_direct
+     pacurl2 需要改为：http://127.0.0.1:8080/pacurl_need_password
 
 ## 用websocket url (简称wssurl)翻墙：
 
