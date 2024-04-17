@@ -38,7 +38,7 @@ pac加密代理服务器，编译好的绿色可执行程序和说明文档
 
 pacurl1 :  https://your.proxy.com/pacurl_direct         (超过两个小时不上网需要关闭和重新打开浏览器)
 
-pacurl2 ： https://your.proxy.com/pacurl_need_password  (浏览器会提示输入用户密码）
+pacurl2 :  https://your.proxy.com/pacurl_need_password  (浏览器会提示输入用户密码）
 
    用户/密码：proxy_user / proxy_pass  （需要在2分钟内输入正确用户密码，否则需要关闭重新打开浏览器）
 
