@@ -112,7 +112,7 @@ Firefox设置见上图，选中Manual proxy configuration
 
 wssurl + /pac翻墙说明详见：https://github.com/httpgate/wssproxy-agent
 
-Firefox设置同2 用pacurl翻墙，但只能用带用户名密码的pacurl
+Firefox设置同2 用pacurl翻墙，但只能用需要输入户名密码的pacurl_need_password
 
 可能需要用类似nextdns.io这样的Private DNS加密DNS服务，可参考[CDN中转DOH服务](https://github.com/httpgate/wssproxy-agent/blob/main/CDN_PROXY_DOH.md)
 
