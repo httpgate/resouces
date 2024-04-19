@@ -4,8 +4,6 @@ pacproxy runs in a web server 在vps服务器上运行的pacproxy
 
 自动获取SSL数字证书, 自动加载SSL数字证书
 
-支持多域名，能同时保存和获取多个域名数字证书，但只能启用其中一个域名的https加密
-
 关于pacproxy参见[pacproxy.js](https://github.com/httpgate/pacproxy.js)
 
 
