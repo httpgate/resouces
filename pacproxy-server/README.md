@@ -11,7 +11,7 @@ pacproxy runs in a web server 在vps服务器上运行的pacproxy
 
 ## 准备
 
-需要能运行nodejs的服务器, 新手请选用Ubuntu服务器
+需要能运行nodejs的服务器, 新手建议选用Debian服务器
 
 需要[申请一个域名](https://github.com/httpgate/pacproxy.js/blob/main/documents/About_Domain_ZH.md)，并将域名指向服务器IP
 
@@ -40,7 +40,7 @@ nano current.site.cfg
 ### 运行pacproxy服务：
 
 ```
-./server-linux
+sudo ./server-linux
 ```
 核对屏幕上显示出的PAC链接，如果不对则需要再修改current.site.cfg
 
@@ -50,7 +50,7 @@ nano current.site.cfg
 ### 后台运行pacproxy服务：
 
 ```
-nohup ./server-linux &
+sudo nohup ./server-linux &
 ```
 加nohup防止关闭ssh连接后服务中止, (如nohup有问题可以改用screen)
 
@@ -65,4 +65,15 @@ tail -f nohup.out
 ```
 ps -ef | grep node
 kill -9 找到的pid
+```
+
+### 更新数字证书，免费数字证书现在有效期缩短为3个月，建议每2个月更新一次数字证书
+
+```
+sudo ./server-linux forcert
+```
+加forcert参数运行服务后，从浏览器访问服务器的pacurl会更新数字证书，再按Ctrl+C结束服务后以正常模式重启
+
+```
+sudo nohup ./server-linux &
 ```
