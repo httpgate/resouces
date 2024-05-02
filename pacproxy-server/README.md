@@ -62,18 +62,14 @@ tail -f nohup.out
 
 ```
 ps -ef | grep node
-kill -9 找到的pid
+sudo kill -9 找到的pid
 ```
 
 ### 更新数字证书
 
-免费数字证书现在有效期缩短为3个月，建议每2个月更新一次数字证书
+免费数字证书现在有效期缩短为3个月，建议每个月更新一次数字证书
 
 ```
 sudo ./server-linux forcert
 ```
-加forcert参数运行服务后，从浏览器访问pacurl会更新数字证书，再以正常模式重启服务：
-
-```
-sudo nohup ./server-linux &
-```
+加forcert参数运行服务后，会自动更新数字证书后再启动代理服务。
