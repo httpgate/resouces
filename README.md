@@ -69,7 +69,7 @@ pacurl1 需要改为：http://127.0.0.1:8080/pacurl_direct
 
 pacurl2 需要改为：http://127.0.0.1:8080/pacurl_need_password
 
-建议使用[wssagent客户端软件](https://github.com/httpgate/wssproxy-agent)，比stunnel更方便，如下所示：
+建议使用[wssagent客户端软件](https://github.com/httpgate/wssproxy-agent)，比stunnel更安全方便，如下所示：
 
 ## 用websocket url (简称wssurl)翻墙：
 
@@ -90,7 +90,7 @@ Firefox设置见上图，选中Manual proxy configuration
 
 CDN中转 wssurl1:   wss://cdn.proxy.com/pacurl_direct   （CDN能知道访问的网址和http传输内容）
 
-CDN中转 wssurl2:   wss://cdn.proxy.com/pacurl_direct/tls   (传输内容对CDN加密)
+CDN中转 wssurl2:   wss://cdn.proxy.com/pacurl_direct/tls   (传输内容对CDN保密)
 
 在命令行运行wssagent软件，示例： ./wssagent-linux  wss://cdn.proxy.com/pacurl_direct/tls  3128
 
@@ -99,9 +99,9 @@ Firefox设置见上图，选中Manual proxy configuration
 
 ## CDN中转加密pacprxy代理
 
-一般情况下利用wssagent和CDN中转的wssurl会将加密代理转换成本地非加密代理，在某些不安全的设备和网络上，可能希望在firefox上设置加密pacurl实现端到端加密，则可在 wssurl后加 /pac
+一般情况下利用wssagent和CDN中转的wssurl会将加密代理转换成本地非加密代理，在某些不安全的设备和网络上，可能希望在Firefox上设置加密pacurl实现端到端加密，则可在 wssurl后加 /pac
 
-用CDN中转wssurl: wss://cdn.proxy.com/pacurl_direct/pac
+用CDN中转wssurl: wss://cdn.proxy.com/pacurl_direct/pac   (传输内容对CDN，本地网络，本设备保密，仅Firefox解密)
 
 在命令行运行wssagent软件，示例： ./wssagent-linux  wss://cdn.proxy.com/pacurl_direct/pac  443  -s
 
