@@ -42,7 +42,6 @@ pacurl2 :  https://your.proxy.com/pacurl_need_password  (浏览器会提示输�
 
    用户/密码：proxy_user / proxy_pass  （需要在2分钟内输入正确用户密码，否则需要关闭重新打开浏览器）
 
-
 可以直接将pacurl设置在Firefox浏览器内，或wifi网络设置上，无需安装翻墙软件即可翻墙
 
 pacurl翻墙说明详见： https://github.com/httpgate/pacproxy.js/blob/main/documents/DeviceSetting_ZH.md
@@ -56,7 +55,7 @@ Firefox设置：
 Stunnel的参考设置为：
 
 ```
-foreground - yes
+foreground = yes
 
 [example-proxy]
 client = yes
