@@ -69,7 +69,7 @@ pacurl1 需要改为：http://127.0.0.1:8080/pacurl_direct
 
 pacurl2 需要改为：http://127.0.0.1:8080/pacurl_need_password
 
-建议使用[wssagent客户端软件](https://github.com/httpgate/wssproxy-agent)，如下所示：
+建议使用[wssagent客户端软件](https://github.com/httpgate/wssproxy-agent)，比stunnel更方便，如下所示：
 
 ## 用websocket url (简称wssurl)翻墙：
 
